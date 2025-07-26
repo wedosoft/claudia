@@ -1,10 +1,10 @@
 /**
- * Claude-themed syntax highlighting theme
- * Features orange, purple, and violet colors to match Claude's aesthetic
+ * Tomorrow Night Blue syntax highlighting theme
+ * Matches VS Code's Tomorrow Night Blue theme colors
  */
 export const claudeSyntaxTheme: any = {
   'code[class*="language-"]': {
-    color: '#e3e8f0',
+    color: '#ffffff',
     background: 'transparent',
     textShadow: 'none',
     fontFamily: 'var(--font-mono)',
@@ -24,7 +24,7 @@ export const claudeSyntaxTheme: any = {
     hyphens: 'none',
   },
   'pre[class*="language-"]': {
-    color: '#e3e8f0',
+    color: '#ffffff',
     background: 'transparent',
     textShadow: 'none',
     fontFamily: 'var(--font-mono)',
@@ -47,100 +47,100 @@ export const claudeSyntaxTheme: any = {
     overflow: 'auto',
   },
   ':not(pre) > code[class*="language-"]': {
-    background: 'rgba(139, 92, 246, 0.1)',
+    background: 'rgba(0, 63, 142, 0.3)',
     padding: '0.1em 0.3em',
     borderRadius: '0.3em',
     whiteSpace: 'normal',
   },
   'comment': {
-    color: '#6b7280',
+    color: '#969896',
     fontStyle: 'italic',
   },
   'prolog': {
-    color: '#6b7280',
+    color: '#969896',
   },
   'doctype': {
-    color: '#6b7280',
+    color: '#969896',
   },
   'cdata': {
-    color: '#6b7280',
+    color: '#969896',
   },
   'punctuation': {
-    color: '#9ca3af',
+    color: '#ffffff',
   },
   'namespace': {
     opacity: '0.7',
   },
   'property': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange (variable)
   },
   'tag': {
-    color: '#8b5cf6', // Violet
+    color: '#81a2be', // Tomorrow Night Blue (keyword)
   },
   'boolean': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange
   },
   'number': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange
   },
   'constant': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange
   },
   'symbol': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange
   },
   'deleted': {
-    color: '#ef4444',
+    color: '#cc6666', // Tomorrow Night Red
   },
   'selector': {
-    color: '#a78bfa', // Light Purple
+    color: '#b294bb', // Tomorrow Night Purple
   },
   'attr-name': {
-    color: '#a78bfa', // Light Purple
+    color: '#de935f', // Tomorrow Night Orange
   },
   'string': {
-    color: '#10b981', // Emerald Green
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'char': {
-    color: '#10b981', // Emerald Green
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'builtin': {
-    color: '#8b5cf6', // Violet
+    color: '#81a2be', // Tomorrow Night Blue
   },
   'url': {
-    color: '#10b981', // Emerald Green
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'inserted': {
-    color: '#10b981', // Emerald Green
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'entity': {
-    color: '#a78bfa', // Light Purple
+    color: '#b294bb', // Tomorrow Night Purple
     cursor: 'help',
   },
   'atrule': {
-    color: '#c084fc', // Light Violet
+    color: '#81a2be', // Tomorrow Night Blue (keyword)
   },
   'attr-value': {
-    color: '#10b981', // Emerald Green
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'keyword': {
-    color: '#c084fc', // Light Violet
+    color: '#81a2be', // Tomorrow Night Blue
   },
   'function': {
-    color: '#818cf8', // Indigo
+    color: '#f0c674', // Tomorrow Night Yellow
   },
   'class-name': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#f0c674', // Tomorrow Night Yellow
   },
   'regex': {
-    color: '#06b6d4', // Cyan
+    color: '#b5bd68', // Tomorrow Night Green
   },
   'important': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#cc6666', // Tomorrow Night Red
     fontWeight: 'bold',
   },
   'variable': {
-    color: '#a78bfa', // Light Purple
+    color: '#de935f', // Tomorrow Night Orange
   },
   'bold': {
     fontWeight: 'bold',
@@ -149,27 +149,27 @@ export const claudeSyntaxTheme: any = {
     fontStyle: 'italic',
   },
   'operator': {
-    color: '#9ca3af',
+    color: '#ffffff',
   },
   'script': {
-    color: '#e3e8f0',
+    color: '#ffffff',
   },
   'parameter': {
-    color: '#fbbf24', // Yellow
+    color: '#de935f', // Tomorrow Night Orange
   },
   'method': {
-    color: '#818cf8', // Indigo
+    color: '#f0c674', // Tomorrow Night Yellow
   },
   'field': {
-    color: '#f59e0b', // Amber/Orange
+    color: '#de935f', // Tomorrow Night Orange
   },
   'annotation': {
-    color: '#6b7280',
+    color: '#969896',
   },
   'type': {
-    color: '#a78bfa', // Light Purple
+    color: '#81a2be', // Tomorrow Night Blue
   },
   'module': {
-    color: '#8b5cf6', // Violet
+    color: '#81a2be', // Tomorrow Night Blue
   },
 }; 
