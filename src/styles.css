@@ -5,9 +5,9 @@
   /* Colors - Based on VS Code Tomorrow Night Blue theme */
   --color-background: #002451;  /* Deep blue background */
   --color-foreground: #ffffff;  /* White text */
-  --color-card: #001833;  /* Darker blue for cards (sidebar background) */
+  --color-card: #001733;  /* VS Code style darker blue for cards */
   --color-card-foreground: #ffffff;  /* White text on cards */
-  --color-popover: #001833;  /* Same as card */
+  --color-popover: #001733;  /* Same as card */
   --color-popover-foreground: #ffffff;  /* White text */
   --color-primary: #81a2be;  /* Light blue for primary */
   --color-primary-foreground: #002451;  /* Dark blue text on primary */
@@ -20,12 +20,12 @@
   --color-destructive: #cc6666;  /* Red for errors */
   --color-destructive-foreground: #ffffff;  /* White text */
   --color-border: #003f8a;  /* Border blue (selection color) */
-  --color-input: #001833;  /* Input background (sidebar color) */
+  --color-input: #001733;  /* Input background (same as card) */
   --color-ring: #81a2be;  /* Focus ring (light blue) */
   
   /* Additional colors for status messages and syntax highlighting */
-  --color-green-500: #b5bd68;  /* Tomorrow Night Green */
-  --color-green-600: #8c9440;  /* Darker green */
+  --color-green-500: #10b981;  /* Original green for status */
+  --color-green-600: #059669;  /* Original darker green */
   --color-yellow-500: #f0c674;  /* Tomorrow Night Yellow */
   --color-yellow-600: #d0a85c;  /* Darker yellow */
   --color-blue-500: #81a2be;  /* Tomorrow Night Blue */
@@ -81,16 +81,12 @@ textarea::placeholder {
 }
 
 .bg-muted\/50 {
-  background-color: rgba(0, 52, 110, 0.5) !important;
-}
-
-.bg-muted\/30 {
-  background-color: rgba(0, 52, 110, 0.3) !important;
+  background-color: rgba(0, 23, 51, 0.5) !important;  /* Based on updated card color */
 }
 
 /* Hover states for Tailwind utility classes */
 .hover\:bg-muted:hover {
-  background-color: var(--color-accent) !important;
+  background-color: #00346e !important;  /* Line highlight blue for hover */
 }
 
 .hover\:bg-muted-foreground\/20:hover {
@@ -217,7 +213,7 @@ button:focus-visible,
 }
 
 .w-md-editor-toolbar {
-  background-color: var(--color-card) !important;
+  background-color: #001b3a !important;  /* Slightly darker blue for toolbar */
   border-bottom: 1px solid var(--color-border) !important;
 }
 
@@ -439,7 +435,7 @@ button:focus-visible,
 }
 
 .prose.dark\:prose-invert pre {
-  background-color: rgb(13, 17, 23);
+  background-color: var(--color-card);
   border: 1px solid var(--color-border);
 }
 
@@ -654,16 +650,20 @@ code::-webkit-scrollbar-thumb:hover,
 }
 
 .bg-zinc-950 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 36, 81, 0.3);
+}
+
+.bg-zinc-950 {
+  background-color: var(--color-card) !important;  /* Override zinc with theme color */
 }
 
 .bg-zinc-950 ::-webkit-scrollbar-thumb {
-  background-color: rgba(107, 114, 128, 0.3);
+  background-color: rgba(129, 162, 190, 0.3);
   border-radius: 4px;
 }
 
 .bg-zinc-950 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(107, 114, 128, 0.5);
+  background-color: rgba(129, 162, 190, 0.5);
 }
 
 /* Code preview specific scrollbar */
@@ -673,7 +673,7 @@ code::-webkit-scrollbar-thumb:hover,
 }
 
 .code-preview-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 36, 81, 0.2);
   border-radius: 6px;
 }
 
@@ -693,14 +693,14 @@ code::-webkit-scrollbar-thumb:hover,
 }
 
 .code-preview-scroll::-webkit-scrollbar-corner {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 36, 81, 0.2);
   border-radius: 6px;
 }
 
 /* Firefox scrollbar for code preview */
 .code-preview-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(107, 114, 128, 0.4) rgba(0, 0, 0, 0.2);
+  scrollbar-color: rgba(129, 162, 190, 0.4) rgba(0, 36, 81, 0.2);
 }
 
 /* NFO Credits Scanlines Animation */
@@ -752,4 +752,231 @@ code::-webkit-scrollbar-thumb:hover,
 
 .image-move-to-input {
   animation: moveToInput 0.8s ease-in-out forwards;
+}
+
+/* Additional enhancements for better visual hierarchy */
+.border {
+  border-color: var(--color-border) !important;
+}
+
+.border-b {
+  border-bottom-color: var(--color-border) !important;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  background-color: #001e40 !important;  /* Slightly lighter than card, but still blue */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 36, 81, 0.5);
+}
+
+/* Selection and focus states */
+::selection {
+  background-color: #003f8a;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #003f8a;
+  color: #ffffff;
+}
+
+/* Better contrast for inputs */
+input, textarea, select {
+  background-color: var(--color-input) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-foreground) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary) !important;
+  background-color: #001d3d !important;  /* Slightly lighter blue on focus */
+}
+
+/* Button styles to match VS Code Tomorrow Night Blue */
+.bg-primary {
+  background-color: #1e69b8 !important;  /* VS Code blue button */
+}
+
+.text-primary-foreground {
+  color: #ffffff !important;  /* White text on primary buttons */
+}
+
+.hover\:bg-primary\/90:hover {
+  background-color: #2373c7 !important;  /* Lighter blue on hover */
+}
+
+.bg-secondary {
+  background-color: #00346e !important;  /* Secondary button blue */
+}
+
+.text-secondary-foreground {
+  color: #ffffff !important;  /* White text on secondary buttons */
+}
+
+.hover\:bg-secondary\/80:hover {
+  background-color: #003f8a !important;  /* Lighter on hover */
+}
+
+/* All button text should be white */
+button {
+  color: #ffffff !important;
+}
+
+/* Badge and tag styles */
+.bg-blue-100, .bg-slate-100 {
+  background-color: #003f8a !important;  /* Tag background */
+  color: #ffffff !important;
+}
+
+.text-blue-700, .text-slate-700 {
+  color: #ffffff !important;
+}
+
+/* Outline button hover */
+.hover\:bg-accent:hover {
+  background-color: #00346e !important;
+}
+
+/* Toggle switch and checkbox styles */
+.bg-slate-200 {
+  background-color: #00346e !important;  /* Inactive toggle background */
+}
+
+.bg-slate-900 {
+  background-color: #1e69b8 !important;  /* Active toggle background */
+}
+
+/* Tab styles */
+.border-blue-500 {
+  border-color: #1e69b8 !important;  /* Active tab indicator */
+}
+
+/* Tab manager specific styles */
+.bg-muted\/30 {
+  background-color: #001e40 !important;  /* Tab bar background */
+}
+
+/* Active tab background */
+.bg-background {
+  background-color: var(--color-background) !important;
+}
+
+/* Dropdown and select styles */
+.bg-white {
+  background-color: var(--color-card) !important;
+  color: var(--color-foreground) !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #00346e !important;
+}
+
+/* Override all black and gray backgrounds */
+.bg-black, .bg-gray-900, .bg-gray-800 {
+  background-color: var(--color-background) !important;
+}
+
+.bg-gray-700, .bg-gray-600 {
+  background-color: var(--color-card) !important;
+}
+
+/* Modal and dialog backgrounds */
+.bg-black\/50, .bg-black\/80 {
+  background-color: rgba(0, 36, 81, 0.8) !important;
+}
+
+/* Input field specific overrides */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  background-color: #001733 !important;  /* Match card background */
+  color: #ffffff !important;
+  border: 1px solid #003f8a !important;
+}
+
+/* Dark theme input overrides */
+.dark input,
+.dark textarea,
+.dark select,
+input.bg-gray-50,
+input.bg-gray-100,
+textarea.bg-gray-50,
+textarea.bg-gray-100 {
+  background-color: #001733 !important;
+  color: #ffffff !important;
+}
+
+/* Editor and code areas */
+.monaco-editor,
+.monaco-editor-background,
+.monaco-editor .monaco-editor-background,
+.monaco-editor .inputarea.ime-input {
+  background-color: #001733 !important;
+}
+
+/* Code editor textarea */
+.w-md-editor-text-pre,
+.w-md-editor-text-input, 
+.w-md-editor-text textarea,
+.w-md-editor-text {
+  background-color: #001733 !important;
+  color: #ffffff !important;
+}
+
+/* Override any inline styles */
+[style*="background-color: rgb(0, 0, 0)"],
+[style*="background-color: black"],
+[style*="background-color:#000"],
+[style*="background-color:#000000"] {
+  background-color: #001733 !important;
+}
+
+/* Additional dark theme overrides */
+.dark .bg-gray-900,
+.dark .bg-gray-800,
+.dark .bg-zinc-900,
+.dark .bg-zinc-800,
+.dark .bg-neutral-900,
+.dark .bg-neutral-800 {
+  background-color: var(--color-card) !important;
+}
+
+/* Specific component overrides */
+.cm-editor {
+  background-color: #001733 !important;
+}
+
+.cm-content,
+.cm-scroller {
+  background-color: #001733 !important;
+}
+
+/* React Select dropdown overrides */
+.react-select__control,
+.react-select__menu,
+.react-select__option {
+  background-color: #001733 !important;
+  color: #ffffff !important;
+}
+
+.react-select__option:hover {
+  background-color: #00346e !important;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+  color: #7285b7 !important;  /* Tomorrow Night Blue comment color */
+  opacity: 0.8;
 } 
