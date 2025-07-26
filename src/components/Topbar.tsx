@@ -32,6 +32,10 @@ interface TopbarProps {
    */
   onAgentsClick?: () => void;
   /**
+   * Callback when Home is clicked
+   */
+  onHomeClick?: () => void;
+  /**
    * Optional className for styling
    */
   className?: string;
@@ -55,6 +59,7 @@ export const Topbar: React.FC<TopbarProps> = ({
   onMCPClick,
   onInfoClick,
   onAgentsClick,
+  onHomeClick,
   className,
 }) => {
   const [versionStatus, setVersionStatus] = useState<ClaudeVersionStatus | null>(null);
@@ -104,7 +109,7 @@ export const Topbar: React.FC<TopbarProps> = ({
         variant="ghost"
         size="sm"
         className="h-auto py-1 px-2 hover:bg-accent"
-        onClick={onSettingsClick}
+        onClick={onHomeClick || onSettingsClick}
       >
         <div className="flex items-center space-x-2 text-xs">
           <Circle

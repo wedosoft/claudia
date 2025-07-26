@@ -45,7 +45,7 @@ type View =
  * AppContent component - Contains the main app logic, wrapped by providers
  */
 function AppContent() {
-  const [view, setView] = useState<View>("tabs");
+  const [view, setView] = useState<View>("welcome");
   const { createClaudeMdTab, createSettingsTab, createUsageTab, createMCPTab } = useTabState();
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -461,6 +461,7 @@ function AppContent() {
         onMCPClick={() => createMCPTab()}
         onInfoClick={() => setShowNFO(true)}
         onAgentsClick={() => setShowAgentsModal(true)}
+        onHomeClick={() => handleViewChange("welcome")}
       />
       
       {/* Main Content */}
