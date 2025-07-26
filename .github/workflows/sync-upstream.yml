@@ -1,0 +1,46 @@
+name: Sync with Upstream
+
+on:
+  schedule:
+    # Run every Sunday at midnight
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+      
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/getAsterisk/claudia.git || true
+          git fetch upstream
+      
+      - name: Sync main branch
+        run: |
+          git checkout main
+          git merge upstream/main --no-edit || echo "Merge conflicts detected"
+          git push origin main || echo "Push failed - manual intervention needed"
+      
+      - name: Create PR if conflicts
+        if: failure()
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: "Sync with upstream - Manual merge required"
+          body: |
+            Automatic sync with upstream failed due to merge conflicts.
+            Please resolve conflicts manually.
+            
+            See CUSTOMIZATIONS.md for list of customized files.
+          branch: sync-upstream
+          base: main
